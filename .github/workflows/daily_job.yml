@@ -19,8 +19,12 @@ jobs:
           java-version: '11'  # 指定你需要的 Java 版本
           distribution: 'adopt'  # 指定 distribution 参数为 adopt 或其他有效值
           
-      - name: 安装 Maven
-        run: sudo apt-get update && sudo apt-get install -y maven
+      - name: 缓存 Maven 依赖
+        uses: actions/cache@v2
+        with:
+          path: ~/.m2/repository  # 缓存 Maven 默认的本地仓库路径
+          key: ${{ runner.os }}-maven-${{ hashFiles('**/pom.xml') }}  # 根据 pom.xml 文件内容生成缓存的 key
+
 
       - name: 构建 Java 项目
         run: mvn clean install  # 替换为你的项目构建命令
