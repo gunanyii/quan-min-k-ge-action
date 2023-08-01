@@ -15,8 +15,8 @@ import java.io.IOException;
 
 public class QuanMinKg {
     public static void main(String[] args) throws IOException {
-        String ck = "qq_domain_video_guid_verify=fc26291450b01e24; pgv_pvid=8730358532; tvfe_boss_uuid=cb84c7f4acb76446; RK=kWE1GC/9TJ; ptcz=4406215b95f27adcfa1192211dbd06ebdd22728c372c5329cf4c395fa2893920; qrsig=3845AB79F92EF46D4C6BAAB6C959D4F9; muid=6695948c2c2c308e; openid=C34E1A30D66F7F1C125592F8D48B33E9; openkey=JxEACmS06LYAD0LwAAAAICHo6QiVfqsFfO7qDButAKTYxmbvdCuihWEt6BiT3QmA; opentype=0; uid=48999175; userlevel=8";
-        String t_uUid = "48999175";
+        String ck = System.getenv("COOKIE");
+        String t_uUid = System.getenv("UID");
 
         String Url_a = "https://node.kg.qq.com/webapp/proxy?ns=proto_profile&cmd=profile.getProfile&mapExt=JTdCJTIyZmlsZSUyMiUzQSUyMnByb2ZpbGVfd2ViYXBwSmNlJTIyJTJDJTIyY21kTmFtZSUyMiUzQSUyMlByb2ZpbGVHZXQlMjIlMkMlMjJhcHBpZCUyMiUzQTEwMDA2MjYlMkMlMjJkY2FwaSUyMiUzQSU3QiUyMmludGVyZmFjZUlkJTIyJTNBMjA1MzU5NTk3JTdEJTJDJTIybDVhcGklMjIlM0ElN0IlMjJtb2RpZCUyMiUzQTI5NDAxNyUyQyUyMmNtZCUyMiUzQTI2MjE0NCU3RCUyQyUyMmlwJTIyJTNBJTIyMTAwLjExMy4xNjIuMTc4JTIyJTJDJTIycG9ydCUyMiUzQSUyMjEyNDA2JTIyJTdE&t_uUid=" + t_uUid;
         String Url_b = "https://node.kg.qq.com/webapp/proxy?ns=KG_TASK&cmd=task.getLottery&ns_inbuf=&mapExt=JTdCJTIyZmlsZSUyMiUzQSUyMnRhc2tKY2UlMjIlMkMlMjJjbWROYW1lJTIyJTNBJTIyTG90dGVyeVJlcSUyMiUyQyUyMnduc0NvbmZpZyUyMiUzQSU3QiUyMmFwcGlkJTIyJTNBMTAwMDU1NyU3RCUyQyUyMmw1YXBpJTIyJTNBJTdCJTIybW9kaWQlMjIlM0E1MDM5MzclMkMlMjJjbWQlMjIlM0E1ODk4MjQlN0QlN0Q%3D&t_uid=" + t_uUid + "&t_iShowEntry=1&t_type=";
