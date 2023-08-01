@@ -28,10 +28,6 @@ jobs:
       - name: 构建项目
         run: mvn compile
 
-      - name: 显示输出目录内容
-        run: ls /home/runner/work/quan-min-k-ge-action/quan-min-k-ge-action/src/main/resources
-
-
       - name: 获取密码
         run: echo "export COOKIE=${{ secrets.MY_SECRET_PASSWORD }}" >> $GITHUB_ENV
         
