@@ -26,11 +26,8 @@ jobs:
         run: mvn clean install  # 替换为你的项目构建命令
 
 
-      - name: 获取密码
-        run: echo "export COOKIE=${{ secrets.MY_SECRET_PASSWORD }}" >> $GITHUB_ENV
-        
-      - name: 获取UID
-        run: echo "export UID=${{ secrets.MY_SECRET_UID }}" >> $GITHUB_ENV
-
       - name: 运行 Java 程序
         run: java -jar target/quan-min-k-ge-action-1.0-SNAPSHOT.jar $COOKIE $UID
+        env:
+          COOKIE: ${{ secrets.MY_SECRET_PASSWORD }}
+          UID: ${{ secrets.MY_SECRET_UID }}
