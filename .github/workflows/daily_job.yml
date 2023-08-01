@@ -28,6 +28,10 @@ jobs:
       - name: 构建项目
         run: mvn compile
 
+      - name: 显示输出目录内容
+        run: ls target
+
+
       - name: 获取密码
         run: echo "export COOKIE=${{ secrets.MY_SECRET_PASSWORD }}" >> $GITHUB_ENV
         
