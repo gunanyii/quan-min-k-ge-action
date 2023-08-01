@@ -15,10 +15,13 @@ jobs:
       - name: 设置 Python 环境
         uses: actions/setup-python@v2
         with:
-          python-version: '3.8'  # 指定你的 Python 版本
+          python-version: '3.11'  # 指定你的 Python 版本
 
       - name: 安装依赖
         run: pip install -r requirements.txt  # 如果有依赖，确保在 requirements.txt 中列出
 
       - name: 运行脚本
-        run: python quanmin.py  # 替换成你的 Python 脚本文件名
+        env:
+          TOKEN_1: ${{ secrets.TOKEN_1 }}
+          TOKEN_2: ${{ secrets.TOKEN_2 }}
+        run: python your_script.py  # 替换成你的 Python 脚本文件名
