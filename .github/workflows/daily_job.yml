@@ -18,6 +18,7 @@ jobs:
         uses: actions/setup-java@v2
         with:
           java-version: '11'  # 指定你需要的 Java 版本
+          distribution: 'adopt'  # 指定 distribution 参数为 adopt 或其他有效值
 
       - name: 获取密码
         run: echo "export COOKIE=${{ secrets.MY_SECRET_PASSWORD }}" >> $GITHUB_ENV
@@ -26,7 +27,7 @@ jobs:
         run: echo "export UID=${{ secrets.MY_SECRET_UID }}" >> $GITHUB_ENV
 
       - name: 编译 Java 程序
-        run: javac path/to/your_java_file.java  # 替换为你的 Java 文件的路径
+        run: javac path/to/QuanMinKg.java  # 替换为你的 Java 文件的路径
 
       - name: 运行 Java 程序
-        run: java -cp path/to your_java_file $PASSWORD  # 替换为你的 Java 类的包路径和类名
+        run: java -cp path/to QuanMinKg $COOKIE $UID  # 替换为你的 Java 类的包路径和类名
