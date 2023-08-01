@@ -29,7 +29,7 @@ jobs:
         run: mvn compile
 
       - name: 显示输出目录内容
-        run: ls target/classes
+        run: ls target/generated-sources
 
 
       - name: 获取密码
