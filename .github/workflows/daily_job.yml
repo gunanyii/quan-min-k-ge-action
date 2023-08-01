@@ -25,13 +25,14 @@ jobs:
       - name: 构建 Java 项目
         run: mvn clean install  # 替换为你的项目构建命令
 
+      - name: 构建项目
+        run: mvn compile
+
       - name: 获取密码
         run: echo "export COOKIE=${{ secrets.MY_SECRET_PASSWORD }}" >> $GITHUB_ENV
         
       - name: 获取UID
         run: echo "export UID=${{ secrets.MY_SECRET_UID }}" >> $GITHUB_ENV
-
-
 
       - name: 编译 Java 程序
         run: javac src/main/java/com/xxl/job/executor/service/QuanMinKg.java  # 替换为你的 Java 文件的路径
