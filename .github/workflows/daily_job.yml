@@ -18,6 +18,11 @@ jobs:
         with:
           java-version: '11'  # 指定你需要的 Java 版本
           distribution: 'adopt'  # 指定 distribution 参数为 adopt 或其他有效值
+          
+      - name: 安装 Maven
+        run: sudo apt-get update && sudo apt-get install -y maven
+
+        
 
       - name: 获取密码
         run: echo "export COOKIE=${{ secrets.MY_SECRET_PASSWORD }}" >> $GITHUB_ENV
