@@ -29,7 +29,7 @@ jobs:
         run: mvn compile
 
       - name: 显示输出目录内容
-        run: ls target/generated-sources
+        run: ls /home/runner/work/quan-min-k-ge-action/quan-min-k-ge-action/src/main/resources
 
 
       - name: 获取密码
@@ -39,4 +39,4 @@ jobs:
         run: echo "export UID=${{ secrets.MY_SECRET_UID }}" >> $GITHUB_ENV
 
       - name: 运行 Java 程序
-        run: java -cp target/classes com.xxl.job.executor.service.QuanMinKg $COOKIE $UID
+        run: java -cp /home/runner/work/quan-min-k-ge-action/quan-min-k-ge-action/src/main/resources com.xxl.job.executor.service.QuanMinKg $COOKIE $UID
