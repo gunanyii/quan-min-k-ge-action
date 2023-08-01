@@ -3,7 +3,9 @@ name: Daily Job
 on:
   # 定时触发：每天UTC时间的00:00执行
   schedule:
-    - cron: '52 14 * * *'
+    - cron: '0 0 * * *'
+  workflow_dispatch:  # 添加 workflow_dispatch 触发器
+
 
 jobs:
   run_script:
