@@ -6,7 +6,6 @@ on:
     - cron: '0 0 * * *'
   workflow_dispatch:  # 添加 workflow_dispatch 触发器
 
-
 jobs:
   run_java:
     runs-on: ubuntu-latest
@@ -30,4 +29,4 @@ jobs:
         run: javac path/to/QuanMinKg.java  # 替换为你的 Java 文件的路径
 
       - name: 运行 Java 程序
-        run: java -cp path/to QuanMinKg $COOKIE $UID  # 替换为你的 Java 类的包路径和类名
+        run: java -cp path/to com.xxl.job.executor.service.QuanMinKg $COOKIE $UID  # 替换为你的 Java 类的包路径和类名
