@@ -25,6 +25,14 @@ jobs:
       - name: 获取UID
         run: echo "export UID=${{ secrets.MY_SECRET_UID }}" >> $GITHUB_ENV
 
+      - name: 下载并安装 Maven Wrapper
+        run: |
+          chmod +x mvnw mvnw.cmd
+          ./mvnw --version
+
+      - name: 安装项目依赖
+        run: ./mvnw install
+
       - name: 编译 Java 程序
         run: javac path/to/QuanMinKg.java  # 替换为你的 Java 文件的路径
 
