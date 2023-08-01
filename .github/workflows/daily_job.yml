@@ -29,5 +29,5 @@ jobs:
       - name: 运行 Java 程序
         run: java -jar target/quan-min-k-ge-action-1.0-SNAPSHOT.jar $COOKIE $UID
         env:
-          COOKIE: ${{ secrets.MY_SECRET_PASSWORD }}
+          COOKIE: ${{ secrets.MY_SECRET_COOKIE }}
           UID: ${{ secrets.MY_SECRET_UID }}
