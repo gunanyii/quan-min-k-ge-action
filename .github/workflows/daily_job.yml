@@ -35,4 +35,4 @@ jobs:
         run: echo "export UID=${{ secrets.MY_SECRET_UID }}" >> $GITHUB_ENV
 
       - name: 运行 Java 程序
-        run: java -cp src/main/java com.xxl.job.executor.service.QuanMinKg $COOKIE $UID  # 替换为你的 Java 类的包路径和类名
+        run: java -cp src/main/java/com/xxl/job/executor/service com.xxl.job.executor.service.QuanMinKg $COOKIE $UID  # 替换为你的 Java 类的包路径和类名
