@@ -28,7 +28,7 @@ jobs:
 
 
       - name: 编译 Java 程序
-        run: javac path/to/QuanMinKg.java  # 替换为你的 Java 文件的路径
+        run: javac src/main/java/com/xxl/job/executor/serviceQuanMinKg.java  # 替换为你的 Java 文件的路径
 
       - name: 运行 Java 程序
-        run: java -cp path/to com.xxl.job.executor.service.QuanMinKg $COOKIE $UID  # 替换为你的 Java 类的包路径和类名
+        run: java -cp src/main/java com.xxl.job.executor.service.QuanMinKg $COOKIE $UID  # 替换为你的 Java 类的包路径和类名
