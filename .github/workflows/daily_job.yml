@@ -22,7 +22,8 @@ jobs:
       - name: 安装 Maven
         run: sudo apt-get update && sudo apt-get install -y maven
 
-        
+      - name: 构建 Java 项目
+        run: mvn clean install  # 替换为你的项目构建命令
 
       - name: 获取密码
         run: echo "export COOKIE=${{ secrets.MY_SECRET_PASSWORD }}" >> $GITHUB_ENV
